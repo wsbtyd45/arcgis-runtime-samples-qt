@@ -14,6 +14,10 @@
 // limitations under the License.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "ListRelatedFeatures.h"
 
 #include "Map.h"
@@ -133,7 +137,6 @@ void ListRelatedFeatures::connectSignals()
       }
     }
   });
-
 
   // connect to the mouseClicked signal
   connect(m_mapView, &MapQuickView::mouseClicked, this, [this](QMouseEvent mouseEvent)

@@ -14,6 +14,10 @@
 // limitations under the License.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "ClosestFacility.h"
 
 #include "ClosestFacilityParameters.h"
@@ -48,7 +52,6 @@ void ClosestFacility::init()
   qmlRegisterType<MapQuickView>("Esri.Samples", 1, 0, "MapView");
   qmlRegisterType<ClosestFacility>("Esri.Samples", 1, 0, "ClosestFacilitySample");
 }
-
 
 void ClosestFacility::componentComplete()
 {

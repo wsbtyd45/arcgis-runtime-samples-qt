@@ -14,6 +14,10 @@
 // limitations under the License.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "AnalyzeHotspots.h"
 
 #include "Map.h"
@@ -63,7 +67,6 @@ void AnalyzeHotspots::componentComplete()
     emit displayErrorDialog("Geoprocessing Task failed", error.message());
   });
 }
-
 
 void AnalyzeHotspots::executeTaskWithDates(const QString& fromDate, const QString& toDate)
 {

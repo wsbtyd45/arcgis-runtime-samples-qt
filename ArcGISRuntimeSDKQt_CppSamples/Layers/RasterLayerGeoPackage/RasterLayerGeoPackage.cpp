@@ -14,6 +14,10 @@
 // limitations under the License.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "RasterLayerGeoPackage.h"
 
 #include "Map.h"
@@ -83,7 +87,6 @@ void RasterLayerGeoPackage::componentComplete()
     // load the GeoPackage
     gpkg->load();
   });
-
 
   // Set map to map view
   m_mapView->setMap(m_map);

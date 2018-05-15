@@ -14,6 +14,10 @@
 // limitations under the License.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "ViewshedLocation.h"
 
 #include "ArcGISTiledElevationSource.h"
@@ -23,7 +27,6 @@
 #include "Camera.h"
 #include "Point.h"
 #include "AnalysisOverlay.h"
-
 
 using namespace Esri::ArcGISRuntime;
 

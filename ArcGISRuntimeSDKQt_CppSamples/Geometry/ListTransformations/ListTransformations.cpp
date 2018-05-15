@@ -14,6 +14,10 @@
 // limitations under the License.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "ListTransformations.h"
 
 #include "Map.h"
@@ -61,7 +65,6 @@ void ListTransformations::componentComplete()
 
     emit showStatusBar(QString("Error setting projection engine directory: %1. %2").arg(e.message()).arg(e.additionalMessage()));
   });
-
 
   // Create a geometry located in the Greenwich observatory courtyard in London, UK, the location of the
   // Greenwich prime meridian. This will be projected using the selected transformation.
@@ -115,7 +118,6 @@ void ListTransformations::addGraphics()
   overlay->graphics()->append(m_originalGraphic);
   overlay->graphics()->append(m_projectedGraphic);
 }
-
 
 void ListTransformations::refreshTransformationList(bool orderBySuitability)
 {

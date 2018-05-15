@@ -14,6 +14,10 @@
 // limitations under the License.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "Animate3DSymbols.h"
 
 #include "ArcGISTiledElevationSource.h"
@@ -350,7 +354,6 @@ MissionData::MissionData():
 
 MissionData::~MissionData()
 {
-
 }
 
 bool MissionData::parse(const QString& dataPath)

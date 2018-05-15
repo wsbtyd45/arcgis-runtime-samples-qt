@@ -10,6 +10,10 @@
 // See the Sample code usage restrictions document for further information.
 //
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include <MyApplication.h>
 
 #include <QDebug>
@@ -45,7 +49,6 @@ MyApplication::MyApplication(const QString& id, int& argc, char** argv):
 
 MyApplication::~MyApplication()
 {
-
 }
 
 bool MyApplication::event(QEvent* event)

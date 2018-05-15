@@ -14,6 +14,10 @@
 // limitations under the License.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "AuthenticationManager.h"
 #include "Map.h"
 #include "MapQuickView.h"
@@ -42,7 +46,6 @@ void ShowOrgBasemaps::init()
   qmlRegisterType<MapQuickView>("Esri.Samples", 1, 0, "MapView");
   qmlRegisterType<ShowOrgBasemaps>("Esri.Samples", 1, 0, "ShowOrgBasemapsSample");
 }
-
 
 void ShowOrgBasemaps::componentComplete()
 {

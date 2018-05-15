@@ -10,6 +10,10 @@
 // See the Sample code usage restrictions document for further information.
 //
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include <QAbstractListModel>
 #include <QByteArray>
 #include <QHash>

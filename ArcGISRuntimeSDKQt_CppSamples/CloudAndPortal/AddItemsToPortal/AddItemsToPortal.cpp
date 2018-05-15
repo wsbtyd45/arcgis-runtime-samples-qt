@@ -12,6 +12,10 @@
 // See the Sample code usage restrictions document for further information.
 // [Legal]
 
+#ifdef PCH_BUILD
+#include "pch.hpp"
+#endif // PCH_BUILD
+
 #include "AuthenticationManager.h"
 #include "Portal.h"
 #include "PortalItem.h"
@@ -192,7 +196,6 @@ void AddItemsToPortal::connectUserSignals()
     setStatusText("Successfully deleted item " + m_item->itemId());
   });
 }
-
 
 void AddItemsToPortal::setStatusText(const QString &statusText)
 {
