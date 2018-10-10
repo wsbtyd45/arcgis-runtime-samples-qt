@@ -1,0 +1,8 @@
+{
+    "source" :  "DownloadPreplannedMapAreas.qml",
+    "otherSourceFiles" :  [
+        "DownloadPreplannedMapAreas.h",
+        "DownloadPreplannedMapAreas.cpp"
+    ],
+    "name" : "Download preplanned map areas"
+}

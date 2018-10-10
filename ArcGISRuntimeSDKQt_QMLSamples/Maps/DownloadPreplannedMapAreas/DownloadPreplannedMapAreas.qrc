@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Samples/Maps/DownloadPreplannedMapAreas">
+        <file alias="sample.json">DownloadPreplannedMapAreas.json</file>        
+        <file>DownloadPreplannedMapAreas.qml</file>
+        <file>screenshot.png</file>
+        <file>README.md</file>
+    </qresource>
+</RCC>
