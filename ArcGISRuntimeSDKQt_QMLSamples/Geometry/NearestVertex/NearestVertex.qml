@@ -57,6 +57,7 @@ Rectangle {
                 color: "yellow"
                 size: 15
             }
+            zIndex: 1
         }
 
         Graphic {
@@ -66,6 +67,7 @@ Rectangle {
                 color: "blue"
                 size: 15
             }
+            zIndex: 0
         }
 
         Graphic {
@@ -75,6 +77,7 @@ Rectangle {
                 color: "red"
                 size: 10
             }
+            zIndex: 2
         }
 
         Component.onCompleted: {

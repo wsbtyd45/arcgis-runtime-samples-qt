@@ -109,10 +109,13 @@ void NearestVertex::setupGraphics()
 
   Graphic* clickedLocationGraphic = new Graphic(this);
   clickedLocationGraphic->setSymbol(clickedLocationSymbol);
+  clickedLocationGraphic->setZIndex(2);
   Graphic* nearestCoordinateGraphic = new Graphic(this);
   nearestCoordinateGraphic->setSymbol(nearestCoordinateSymbol);
+  nearestCoordinateGraphic->setZIndex(1);
   Graphic* nearestVertexGraphic = new Graphic(this);
   nearestVertexGraphic->setSymbol(nearestVertexSymbol);
+  nearestVertexGraphic->setZIndex(0);
 
   graphicsOverlay->graphics()->append(clickedLocationGraphic);
   graphicsOverlay->graphics()->append(nearestCoordinateGraphic);
