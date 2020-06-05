@@ -74,7 +74,7 @@ Rectangle {
                     x: 6.637
                     y: 45.399
                     z: 100.0
-                    spatialReference: SpatialReference.createWgs84()
+                    spatialReference: ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 4326})
                 }
 
                 Component.onCompleted: {

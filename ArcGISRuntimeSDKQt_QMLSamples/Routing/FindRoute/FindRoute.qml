@@ -286,12 +286,12 @@ Rectangle {
         stop1Geometry = ArcGISRuntimeEnvironment.createObject("Point", {
                                                                   x: -13041171,
                                                                   y: 3860988,
-                                                                  spatialReference: SpatialReference.createWebMercator()
+                                                                  spatialReference: ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 102100})
                                                               });
         stop2Geometry = ArcGISRuntimeEnvironment.createObject("Point", {
                                                                   x: -13041693,
                                                                   y: 3856006,
-                                                                  spatialReference: SpatialReference.createWebMercator()
+                                                                  spatialReference: ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 102100})
                                                               });
 
         // create the stop graphics' symbols

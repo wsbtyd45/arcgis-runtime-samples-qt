@@ -124,7 +124,7 @@ Rectangle {
                                                                     x: pointX + 0.01 * i,
                                                                     y: pointY,
                                                                     z: pointZ,
-                                                                    spatialReference: SpatialReference.createWgs84()
+                                                                    spatialReference: ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 4326})
                                                                 });
 
             // create a graphic using the point and the symbol

@@ -127,7 +127,7 @@ Rectangle {
                 createDefaultParametersResult.returnStops = true;
                 createDefaultParametersResult.returnDirections = true;
                 createDefaultParametersResult.returnRoutes = true;
-                createDefaultParametersResult.outputSpatialReference = SpatialReference.createWgs84();
+                createDefaultParametersResult.outputSpatialReference = ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 4326});
                 createDefaultParametersResult.setStops([stop1, stop2, stop3]);
 
                 //solve the route with these parameters

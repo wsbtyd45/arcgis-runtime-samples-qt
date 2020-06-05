@@ -36,7 +36,7 @@ Rectangle {
                 yMin: 44.460458
                 xMax: -110.829381
                 yMax: 44.462735
-                spatialReference: SpatialReference.createWgs84()
+                spatialReference: ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 4326})
             }
 
             // set initial Viewpoint
@@ -67,7 +67,7 @@ Rectangle {
                 Point {
                     x: -110.828140
                     y: 44.460458
-                    spatialReference: SpatialReference.createWgs84()
+                    spatialReference: ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 4326})
                 }
             }
 
@@ -77,7 +77,7 @@ Rectangle {
                 Point {
                     x: -110.829004
                     y: 44.462438
-                    spatialReference: SpatialReference.createWgs84()
+                    spatialReference: ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 4326})
                 }
             }
 
@@ -87,7 +87,7 @@ Rectangle {
                 Point {
                     x: -110.829381
                     y: 44.462735
-                    spatialReference: SpatialReference.createWgs84()
+                    spatialReference: ArcGISRuntimeEnvironment.createObject("SpatialReference", { wkid: 4326})
                 }
             }
         }
