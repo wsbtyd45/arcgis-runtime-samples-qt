@@ -30,6 +30,7 @@ class Map;
 class MapQuickView;
 class RouteTask;
 class RouteTracker;
+class RouteTrackerLocationDataSource;
 class SimulatedLocationDataSource;
 }
 }
@@ -80,6 +81,7 @@ private:
   Esri::ArcGISRuntime::Route m_route;
   Esri::ArcGISRuntime::RouteResult m_routeResult;
   Esri::ArcGISRuntime::RouteTracker* m_routeTracker = nullptr;
+  Esri::ArcGISRuntime::RouteTrackerLocationDataSource* m_routeTrackerLocationDataSource = nullptr;
   Esri::ArcGISRuntime::SimulatedLocationDataSource* m_simulatedLocationDataSource = nullptr;
   QAbstractListModel* m_directions = nullptr;
   bool m_navigationEnabled = false;
