@@ -92,7 +92,7 @@ Rectangle {
                 geometry: polyline
                 SimpleLineSymbol {
                     style: Enums.SimpleLineSymbolStyleDashDotDot
-                    color: "red"
+                    color: "darkred"
                     width: 5
                 }
             }
@@ -101,7 +101,7 @@ Rectangle {
         SimpleMarkerSymbol {
             id: stopSymbol
             style: Enums.SimpleMarkerSymbolStyleDiamond
-            color: "darkred"
+            color: "red"
             size: 20
         }
 
