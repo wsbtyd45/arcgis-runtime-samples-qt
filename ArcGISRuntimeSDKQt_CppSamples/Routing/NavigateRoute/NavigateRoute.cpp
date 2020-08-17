@@ -263,7 +263,7 @@ void NavigateRoute::connectRouteTrackerSignals()
       }
       else
       {
-//        m_simulatedLocationDataSource->stop();
+        m_routeTrackerLocationDataSource->stop();
       }
     }
     m_textString = textString;

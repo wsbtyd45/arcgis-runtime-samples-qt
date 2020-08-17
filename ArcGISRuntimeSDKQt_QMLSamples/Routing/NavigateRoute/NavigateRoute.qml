@@ -266,7 +266,7 @@ Rectangle {
                     if (trackingStatusResult.remainingDestinationCount > 1) {
                         switchToNextDestination();
                     } else {
-//                        simulatedLocationDataSource.stop();
+                        routeTrackerLocDataSource.stop();
                     }
                 }
             }
