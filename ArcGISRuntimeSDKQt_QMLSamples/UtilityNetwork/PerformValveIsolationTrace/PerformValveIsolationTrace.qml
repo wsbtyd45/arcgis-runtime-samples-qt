@@ -26,13 +26,17 @@ Rectangle {
     width: 800
     height: 600
 
-    readonly property url featureServiceUrl: "https://sampleserver7.arcgisonline.com/arcgis/rest/services/UtilityNetwork/NapervilleGas/FeatureServer"
+    readonly property url featureServiceUrl: "https://sampleserver7.arcgisonline.com/server/rest/services/UtilityNetwork/NapervilleGas/FeatureServer"
     readonly property string domainNetworkName: "Pipeline"
     readonly property string tierName: "Pipe Distribution System"
     readonly property string networkSourceName: "Gas Device"
     readonly property string assetGroupName: "Meter"
     readonly property string assetTypeName: "Customer"
     readonly property string globalId: "98A06E95-70BE-43E7-91B7-E34C9D3CB9FF"
+    readonly property string sampleServer7Username: "viewer01"
+    readonly property string sampleServer7Password: "I68VGU^nMurF"
+    property var clickPoint: null
+    property var filterBarriers: []
     property var traceConfiguration: null
     property var startingLocation: null
     property var categories: null
@@ -41,6 +45,64 @@ Rectangle {
     MapView {
         id: mapView
         anchors.fill: parent
+
+        onMouseClicked: {
+            const screenX = mouse.x;
+            const screenY = mouse.y;
+            const tolerance = 10;
+            const returnPopups = false;
+            clickPoint = mouse.mapPoint;
+            mapView.identifyLayers(screenX, screenY, tolerance, returnPopups);
+        }
+
+        onIdentifyLayersStatusChanged : {
+            if (identifyLayersStatus !== Enums.TaskStatusCompleted)
+                return;
+
+            const results = mapView.identifyLayersResults;
+            const result = results[0];
+            const feature = result.geoElements[0];
+            if (!result) {
+//                dialogText.text = qsTr("Could not identify location.")
+//                traceCompletedDialog.open();
+                return;
+            }
+
+            const element = utilityNetwork.createElementWithArcGISFeature(feature);
+
+
+
+            const elementSourceType = element.networkSource.sourceType;
+
+            if (elementSourceType === Enums.UtilityNetworkSourceTypeJunction) {
+//              qDebug() << "Junction";
+              const terminals = element.assetType.terminalConfiguration.terminals;
+              // normally check for multiple terminals but sample doesn't seem to have that occurance.
+              if ( terminals.length > 1)
+              {
+//                qDebug() << "Choose Terminal";
+                return;
+              }
+            } else if (elementSourceType === Enums.UtilityNetworkSourceTypeEdge) {
+//              qDebug() << "Edge";
+
+              if (feature.geometry.geometryType === Enums.GeometryTypePolyline)
+              {
+                const line = GeometryEngine.removeZ(feature.geometry);
+                // Set how far the element is along the edge.
+                const fraction = GeometryEngine.fractionAlong(line, clickPoint, -1);
+//                qDebug() << fraction;
+                element.fractionAlongEdge = fraction;
+              }
+            }
+//            m_filterBarriersOverlay->graphics()->append(new Graphic(clickPoint, this));
+            let graphic = ArcGISRuntimeEnvironment.createObject("Graphic", {geometry: clickPoint});
+
+            filterBarriersOverlay.graphics.append(graphic);
+
+            filterBarriers.push(element);
+        }
+
 
         GraphicsOverlay {
             id: startingLocationOverlay
@@ -54,6 +116,29 @@ Rectangle {
             }
         }
 
+        GraphicsOverlay {
+            id: filterBarriersOverlay
+            SimpleRenderer {
+                SimpleMarkerSymbol {
+                    style: Enums.SimpleMarkerSymbolStyleX
+                    color: "red"
+                    size: 25
+                }
+            }
+
+//            SimpleMarkerSymbol {
+//                style: Enums.SimpleMarkerSymbolStyleX
+//                color: "red"
+//                size: 25
+//            }
+        }
+
+        Credential {
+            id: cred
+            username: sampleServer7Username
+            password: sampleServer7Password
+        }
+
         Map {
             id: map
             BasemapStreetsNightVector {}
@@ -64,8 +149,10 @@ Rectangle {
 
             FeatureLayer {
                 id: distributionLineLayer
+
                 ServiceFeatureTable {
                     url: featureServiceUrl + "/3"
+                    credential: cred
                 }
             }
 
@@ -73,6 +160,7 @@ Rectangle {
                 id: deviceLayer
                 ServiceFeatureTable {
                     url: featureServiceUrl + "/0"
+                    credential: cred
                 }
             }
 
@@ -86,6 +174,9 @@ Rectangle {
 
             UtilityTraceParameters {
                 id: traceParameters
+                onFilterBarriersChanged: {
+                    print("onFilterBarriersChanged: " + filterBarriers.length);
+                }
             }
 
             QueryParameters {
@@ -96,7 +187,15 @@ Rectangle {
                 id: utilityNetwork
                 url: featureServiceUrl
 
+                credential: cred
+
                 onTraceStatusChanged: {
+                    print("trace status: " + traceStatus);
+
+                    if (traceStatus === Enums.TaskStatusErrored) {
+                        print(error.message);
+                    }
+
                     if (traceStatus !== Enums.TaskStatusCompleted)
                         return;
 
@@ -151,6 +250,7 @@ Rectangle {
                 }
 
                 onLoadStatusChanged: {
+                    print(loadStatus);
                     if (loadStatus !== Enums.LoadStatusLoaded)
                         return;
 
@@ -209,7 +309,7 @@ Rectangle {
                 id: backgroundRect
                 color: "#FBFBFB"
                 height: childrenRect.height
-                width: row.width * 1.5
+                width: row.width * 1.25
 
                 RowLayout {
                     id: titleRow
@@ -261,8 +361,17 @@ Rectangle {
                             categoryComparison.category = selectedCategory;
                             categoryComparison.comparisonOperator = Enums.UtilityCategoryComparisonOperatorExists;
 
+                            traceConfiguration.filter.barriers = null;
+
                             // set the category comparison to the barriers of the configuration's trace filter
-                            traceConfiguration.filter.barriers = categoryComparison;
+                            if (filterBarriers.length > 0) {
+                                traceParameters.filterBarriers = filterBarriers;
+                            } else {
+                                traceConfiguration.filter.barriers = categoryComparison;
+                            }
+
+                            print(traceParameters.filterBarriers.length);
+
 
                             // set whether to include isolated features
                             traceConfiguration.includeIsolatedFeatures = checkBox.checked;
@@ -276,6 +385,20 @@ Rectangle {
                         }
                         enabled: uiEnabled
                     }
+                    Button {
+                        id: resetBtn
+                        text: qsTr("Reset")
+                        onClicked: {
+                            filterBarriers = [];
+                            traceParameters.filterBarriers = [];
+                            filterBarriersOverlay.graphics.clear();
+                            for (let i = 0; i < map.operationalLayers.count; i++) {
+                                map.operationalLayers.get(i).clearSelection();
+                            }
+                        }
+                        enabled: uiEnabled
+                    }
+
                 }
 
                 RowLayout {
