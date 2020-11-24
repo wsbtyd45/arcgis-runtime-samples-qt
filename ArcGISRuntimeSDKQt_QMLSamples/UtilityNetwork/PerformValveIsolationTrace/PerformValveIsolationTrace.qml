@@ -37,10 +37,12 @@ Rectangle {
     readonly property string sampleServer7Password: "I68VGU^nMurF"
     property var clickPoint: null
     property var filterBarriers: []
+    property var terminals: []
     property var traceConfiguration: null
     property var startingLocation: null
     property var categories: null
     property bool uiEnabled: false
+    property var element: null
 
     MapView {
         id: mapView
@@ -61,41 +63,42 @@ Rectangle {
 
             const results = mapView.identifyLayersResults;
             const result = results[0];
-            const feature = result.geoElements[0];
             if (!result) {
 //                dialogText.text = qsTr("Could not identify location.")
 //                traceCompletedDialog.open();
                 return;
             }
 
-            const element = utilityNetwork.createElementWithArcGISFeature(feature);
+            const feature = result.geoElements[0];
 
-
+            element = utilityNetwork.createElementWithArcGISFeature(feature);
 
             const elementSourceType = element.networkSource.sourceType;
 
             if (elementSourceType === Enums.UtilityNetworkSourceTypeJunction) {
-//              qDebug() << "Junction";
-              const terminals = element.assetType.terminalConfiguration.terminals;
-              // normally check for multiple terminals but sample doesn't seem to have that occurance.
-              if ( terminals.length > 1)
-              {
-//                qDebug() << "Choose Terminal";
-                return;
+
+              const terminalsToSelect = element.assetType.terminalConfiguration.terminals;
+
+              if ( terminalsToSelect.length > 1) {
+                  let buildingTerminalList = [];
+                  terminals = [];
+                  for (let i = 0; i < terminalsToSelect.length; i++) {
+                      buildingTerminalList.push(terminalsToSelect[i].name);
+                  }
+                  terminals = buildingTerminalList;
+                  terminalPickerView.visible = true;
+                  return;
               }
             } else if (elementSourceType === Enums.UtilityNetworkSourceTypeEdge) {
-//              qDebug() << "Edge";
 
               if (feature.geometry.geometryType === Enums.GeometryTypePolyline)
               {
                 const line = GeometryEngine.removeZ(feature.geometry);
                 // Set how far the element is along the edge.
                 const fraction = GeometryEngine.fractionAlong(line, clickPoint, -1);
-//                qDebug() << fraction;
                 element.fractionAlongEdge = fraction;
               }
             }
-//            m_filterBarriersOverlay->graphics()->append(new Graphic(clickPoint, this));
             let graphic = ArcGISRuntimeEnvironment.createObject("Graphic", {geometry: clickPoint});
 
             filterBarriersOverlay.graphics.append(graphic);
@@ -417,6 +420,13 @@ Rectangle {
             }
         }
 
+        TerminalPickerView {
+            id: terminalPickerView
+//            property alias terminals: terminals
+//            visible: terminals.length != 0
+
+        }
+
         BusyIndicator {
             id: busyIndicator
             anchors.centerIn: parent
@@ -432,5 +442,15 @@ Rectangle {
         onRejected: {
             visible = false;
         }
+    }
+
+    function selectTerminal(index) {
+        print(index);
+        const terminal = element.assetType.terminalConfiguration.terminals[index];
+        element.terminal = terminal;
+        let graphic = ArcGISRuntimeEnvironment.createObject("Graphic", {geometry: clickPoint});
+
+        filterBarriersOverlay.graphics.append(graphic);
+        filterBarriers.push(element);
     }
 }

@@ -113,10 +113,6 @@ Item {
         visible: sampleModel.terminals.length > 0
     }
 
-    AuthenticationView {
-        anchors.fill: parent
-    }
-
     BusyIndicator {
         id: busyIndicator
         anchors.centerIn: parent
