@@ -21,6 +21,7 @@ namespace Esri
 {
 namespace ArcGISRuntime
 {
+class ArcGISFeature;
 class FeatureLayer;
 class GraphicsOverlay;
 class Map;
@@ -29,10 +30,13 @@ class UtilityCategory;
 class UtilityElement;
 class UtilityNetwork;
 class UtilityTraceConfiguration;
+class UtilityTraceParameters;
+class IdentifyLayerResult;
 }
 }
 
 #include <QObject>
+#include <Point.h>
 
 class PerformValveIsolationTrace : public QObject
 {
@@ -44,6 +48,8 @@ class PerformValveIsolationTrace : public QObject
   Q_PROPERTY(bool isolateFeatures MEMBER m_isolateFeatures NOTIFY isolateFeaturesChanged)
   Q_PROPERTY(bool tasksRunning READ tasksRunning NOTIFY tasksRunningChanged)
   Q_PROPERTY(bool noResults READ noResults NOTIFY noResultsChanged)
+//  Q_PROPERTY(bool junctionHasMultipleTerminals MEMBER m_junctionHasMultipleTerminals NOTIFY junctionHasMultipleTerminalsChanged)
+  Q_PROPERTY(QStringList terminals MEMBER m_terminals NOTIFY terminalsChanged)
 
 public:
   explicit PerformValveIsolationTrace(QObject* parent = nullptr);
@@ -51,6 +57,11 @@ public:
 
   static void init();
   Q_INVOKABLE void performTrace();
+  Q_INVOKABLE void performReset();
+  Q_INVOKABLE void selectedTerminal(int index);
+
+private slots:
+  void onIdentifyLayersCompleted(QUuid, const QList<Esri::ArcGISRuntime::IdentifyLayerResult*>& results);
 
 signals:
   void mapViewChanged();
@@ -59,6 +70,8 @@ signals:
   void isolateFeaturesChanged();
   void tasksRunningChanged();
   void noResultsChanged();
+  void junctionHasMultipleTerminalsChanged();
+  void terminalsChanged();
 
 private:
   Esri::ArcGISRuntime::MapQuickView* mapView() const;
@@ -71,15 +84,23 @@ private:
   Esri::ArcGISRuntime::Map* m_map = nullptr;
   Esri::ArcGISRuntime::MapQuickView* m_mapView = nullptr;
   Esri::ArcGISRuntime::GraphicsOverlay* m_startingLocationOverlay = nullptr;
+  Esri::ArcGISRuntime::GraphicsOverlay* m_filterBarriersOverlay = nullptr;
   Esri::ArcGISRuntime::UtilityElement* m_startingLocation = nullptr;
+  Esri::ArcGISRuntime::UtilityElement* m_element = nullptr;
   Esri::ArcGISRuntime::UtilityNetwork* m_utilityNetwork = nullptr;
   Esri::ArcGISRuntime::UtilityTraceConfiguration* m_traceConfiguration = nullptr;
+  Esri::ArcGISRuntime::ArcGISFeature* m_feature = nullptr;
+  Esri::ArcGISRuntime::Point m_clickPoint;
+  QList<Esri::ArcGISRuntime::UtilityElement*> m_filterBarriers;
+  QStringList m_terminals;
+  QScopedPointer<QObject> m_graphicParent;
   QStringList m_categoriesList;
   int m_selectedIndex = -1;
   bool m_isolateFeatures = false;
   bool m_tasksRunning = false;
   bool m_traceRunning = false;
   bool m_noResults = false;
+  bool m_junctionHasMultipleTerminals = false;
 };
 
 #endif // PERFORMVALVEISOLATIONTRACE_H

@@ -19,6 +19,7 @@ import QtQuick.Controls 2.2
 import Esri.Samples 1.0
 import QtQuick.Layouts 1.11
 import QtQuick.Dialogs 1.1
+import Esri.ArcGISRuntime.Toolkit 100.10
 
 Item {
 
@@ -38,7 +39,7 @@ Item {
             id: backgroundRect
             color: "#FBFBFB"
             height: childrenRect.height
-            width: row.width * 1.5
+            width: row.width * 1.25
 
             RowLayout {
                 id: titleRow
@@ -79,6 +80,13 @@ Item {
                     }
                     enabled: !sampleModel.tasksRunning
                 }
+                Button {
+                    text: "Reset"
+                    onClicked: {
+                        sampleModel.performReset();
+                    }
+                    enabled: !sampleModel.tasksRunning
+                }
             }
 
             RowLayout {
@@ -98,6 +106,15 @@ Item {
                 }
             }
         }
+    }
+
+    TerminalPickerView {
+        id: terminalPickerView
+        visible: sampleModel.terminals.length > 0
+    }
+
+    AuthenticationView {
+        anchors.fill: parent
     }
 
     BusyIndicator {
