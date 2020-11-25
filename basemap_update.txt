@@ -1,0 +1,184 @@
+ArcGISRuntimeSDKQt_CppSamples/Maps/SetInitialMapArea/SetInitialMapArea.cpp:  Basemap* basemap = Basemap::imagery(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/ChangeBasemap/ChangeBasemap.cpp:ChangeBasemap::ChangeBasemap(QQuickItem* parent) :
+ArcGISRuntimeSDKQt_CppSamples/Maps/ChangeBasemap/ChangeBasemap.cpp:ChangeBasemap::~ChangeBasemap() = default;
+ArcGISRuntimeSDKQt_CppSamples/Maps/ChangeBasemap/ChangeBasemap.cpp:void ChangeBasemap::init()
+ArcGISRuntimeSDKQt_CppSamples/Maps/ChangeBasemap/ChangeBasemap.cpp:void ChangeBasemap::componentComplete()
+ArcGISRuntimeSDKQt_CppSamples/Maps/ChangeBasemap/ChangeBasemap.cpp:void ChangeBasemap::changeBasemap(const QString& basemap)
+ArcGISRuntimeSDKQt_CppSamples/Maps/ChangeBasemap/main.cpp:  ChangeBasemap::init();
+ArcGISRuntimeSDKQt_CppSamples/Maps/CreateAndSaveMap/CreateAndSaveMap.cpp:    selectedBasemap = Basemap::streets(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/CreateAndSaveMap/CreateAndSaveMap.cpp:    selectedBasemap = Basemap::imagery(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/CreateAndSaveMap/CreateAndSaveMap.cpp:    selectedBasemap = Basemap::topographic(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/CreateAndSaveMap/CreateAndSaveMap.cpp:    selectedBasemap = Basemap::oceans(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/IdentifyLayers/IdentifyLayers.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/ShowLocationHistory/ShowLocationHistory.cpp:  m_map(new Map(Basemap::darkGrayCanvasVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Maps/build-ChangeBasemap-Desktop_Qt_5_15_1_clang_64bit-Release/moc_ChangeBasemap.cpp:void ChangeBasemap::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+ArcGISRuntimeSDKQt_CppSamples/Maps/build-ChangeBasemap-Desktop_Qt_5_15_1_clang_64bit-Release/moc_ChangeBasemap.cpp:QT_INIT_METAOBJECT const QMetaObject ChangeBasemap::staticMetaObject = { {
+ArcGISRuntimeSDKQt_CppSamples/Maps/build-ChangeBasemap-Desktop_Qt_5_15_1_clang_64bit-Release/moc_ChangeBasemap.cpp:const QMetaObject *ChangeBasemap::metaObject() const
+ArcGISRuntimeSDKQt_CppSamples/Maps/build-ChangeBasemap-Desktop_Qt_5_15_1_clang_64bit-Release/moc_ChangeBasemap.cpp:void *ChangeBasemap::qt_metacast(const char *_clname)
+ArcGISRuntimeSDKQt_CppSamples/Maps/build-ChangeBasemap-Desktop_Qt_5_15_1_clang_64bit-Release/moc_ChangeBasemap.cpp:int ChangeBasemap::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+ArcGISRuntimeSDKQt_CppSamples/Maps/ManageBookmarks/ManageBookmarks.cpp:  Basemap* basemap = Basemap::imageryWithLabels(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/OpenMapUrl/OpenMapUrl.cpp:  Basemap* basemap = Basemap::imagery(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/MinMaxScale/MinMaxScale.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/DisplayLayerViewDrawState/DisplayLayerViewDrawState.cpp:  m_map(new Map(Basemap::topographic(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Maps/MapLoaded/MapLoaded.cpp:  Basemap* basemap = Basemap::streets(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/DisplayMap/DisplayMap.cpp:  Basemap* basemap = Basemap::imageryWithLabels(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/DisplayMap/README.md:1. Create an `Map` with a `Basemap::imageryWithLabels()` basemap.
+ArcGISRuntimeSDKQt_CppSamples/Maps/TakeScreenshot/TakeScreenshot.cpp:  m_map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/ShowMagnifier/ShowMagnifier.cpp:  Basemap* basemap = Basemap::imagery(this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/ReadGeoPackage/ReadGeoPackage.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Maps/GenerateOfflineMapLocalBasemap/GenerateOfflineMapLocalBasemap.cpp:const QString GenerateOfflineMapLocalBasemap::s_webMapId = QStringLiteral("acc027394bc84c2fb04d1ed317aac674");
+ArcGISRuntimeSDKQt_CppSamples/Maps/GenerateOfflineMapLocalBasemap/GenerateOfflineMapLocalBasemap.cpp:GenerateOfflineMapLocalBasemap::GenerateOfflineMapLocalBasemap(QQuickItem* parent /* = nullptr */):
+ArcGISRuntimeSDKQt_CppSamples/Maps/GenerateOfflineMapLocalBasemap/GenerateOfflineMapLocalBasemap.cpp:void GenerateOfflineMapLocalBasemap::init()
+ArcGISRuntimeSDKQt_CppSamples/Maps/GenerateOfflineMapLocalBasemap/GenerateOfflineMapLocalBasemap.cpp:void GenerateOfflineMapLocalBasemap::componentComplete()
+ArcGISRuntimeSDKQt_CppSamples/Maps/GenerateOfflineMapLocalBasemap/GenerateOfflineMapLocalBasemap.cpp:void GenerateOfflineMapLocalBasemap::generateMapByExtent(double xCorner1, double yCorner1, double xCorner2, double yCorner2)
+ArcGISRuntimeSDKQt_CppSamples/Maps/GenerateOfflineMapLocalBasemap/main.cpp:  GenerateOfflineMapLocalBasemap::init();
+ArcGISRuntimeSDKQt_CppSamples/Maps/MapRotation/MapRotation.cpp:    Basemap* basemap = Basemap::streets(this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/SyncMapViewSceneView/SyncMapViewSceneView.cpp:  m_scene(new Scene(Basemap::imagery(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Scenes/SyncMapViewSceneView/SyncMapViewSceneView.cpp:  m_map(new Map(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/OrbitCameraAroundObject/OrbitCameraAroundObject.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/ScenePropertiesExpressions/ScenePropertiesExpressions.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/RealisticLightingAndShadows/RealisticLightingAndShadows.cpp:  m_scene(new Scene(Basemap::topographic(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/Animate3DSymbols/Animate3DSymbols.cpp:  Scene* scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/Animate3DSymbols/Animate3DSymbols.cpp:  Map* map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/TerrainExaggeration/TerrainExaggeration.cpp:  Scene* scene = new Scene(Basemap::nationalGeographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/GetElevationAtPoint/GetElevationAtPoint.cpp:  m_scene(new Scene(Basemap::imagery(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Scenes/FeatureLayerExtrusion/FeatureLayerExtrusion.cpp:  Scene* scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/DistanceCompositeSymbol/DistanceCompositeSymbol.cpp:  Basemap* basemap = Basemap::imagery(this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/CreateTerrainSurfaceFromLocalTilePackage/CreateTerrainSurfaceFromLocalTilePackage.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/BasicSceneView/README.md:1. Create an `Scene` object with the `Basemap::imagery()` basemap.
+ArcGISRuntimeSDKQt_CppSamples/Scenes/SurfacePlacement/Surface_Placement.cpp:  Scene* scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/SceneLayerSelection/SceneLayerSelection.cpp:  Scene* scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/AddAPointSceneLayer/AddAPointSceneLayer.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/ChooseCameraController/ChooseCameraController.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/Symbols/Symbols.cpp:  Basemap* basemap = Basemap::imagery(this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/DisplaySceneLayer/DisplaySceneLayer.cpp:  Basemap* basemap = Basemap::topographic(this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/ChangeAtmosphereEffect/ChangeAtmosphereEffect.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/ExtrudeGraphics/ExtrudeGraphics.cpp:  Basemap* basemap = Basemap::imagery(this);
+ArcGISRuntimeSDKQt_CppSamples/Scenes/CreateTerrainSurfaceFromLocalRaster/CreateTerrainSurfaceFromLocalRaster.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Scenes/ViewPointCloudDataOffline/ViewPointCloudDataOffline.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Analysis/LineOfSightGeoElement/LineOfSightGeoElement.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Analysis/AnalyzeViewshed/AnalyzeViewshed.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Analysis/LineOfSightLocation/LineOfSightLocation.cpp:  Scene* scene = new Scene(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Analysis/ViewshedCamera/ViewshedCamera.cpp:  m_scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Analysis/ViewshedGeoElement/ViewshedGeoElement.cpp:  Scene* scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Analysis/DistanceMeasurementAnalysis/DistanceMeasurementAnalysis.cpp:  Scene* scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Analysis/StatisticalQuery/StatisticalQuery.cpp:  m_map = new Map(Basemap::streetsVector(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Analysis/ViewshedLocation/ViewshedLocation.cpp:  Scene* scene = new Scene(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Analysis/AnalyzeHotspots/AnalyzeHotspots.cpp:  m_map = new Map(Basemap::topographic(this), this);   
+ArcGISRuntimeSDKQt_CppSamples/Layers/RasterRenderingRule/RasterRenderingRule.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/IdentifyKmlFeatures/IdentifyKmlFeatures.cpp:  m_map(new Map(Basemap::darkGrayCanvasVector(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/Feature_Collection_Layer/Feature_Collection_Layer.cpp:  m_map = new Map(Basemap::oceans(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/ManageOperationalLayers/ManageOperationalLayers.cpp:  m_map(new Map(Basemap::topographic(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Layers/WmsLayerUrl/WmsLayerUrl.cpp:  m_map = new Map(Basemap::lightGrayCanvas(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/OSM_Layer/OSM_Layer.cpp:  m_map = new Map(Basemap::openStreetMap(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/OSM_Layer/README.md:1. Create a basemap with the static method `Basemap::openStreetMap()`
+ArcGISRuntimeSDKQt_CppSamples/Layers/OSM_Layer/README.md:* Basemap::openStreetMap
+ArcGISRuntimeSDKQt_CppSamples/Layers/OSM_Layer/README.metadata.json:        "Basemap::openStreetMap",
+ArcGISRuntimeSDKQt_CppSamples/Layers/OSM_Layer/README.metadata.json:        "Basemap::openStreetMap",
+ArcGISRuntimeSDKQt_CppSamples/Layers/AddEncExchangeSet/AddEncExchangeSet.cpp:  m_map(new Map(Basemap::oceans(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/RasterLayerFile/RasterLayerFile.cpp:  Basemap* basemap = Basemap::imagery(this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/DisplayWfsLayer/DisplayWfsLayer.cpp:  m_map(new Map(Basemap::topographic(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/IdentifyRasterCell/IdentifyRasterCell.cpp:  m_map(new Map(Basemap::oceans(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/ListKmlContents/ListKmlContents.cpp:  m_scene(new Scene(Basemap::imageryWithLabels(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/ApplyMosaicRuleToRasters/ApplyMosaicRuleToRasters.cpp:  m_map(new Map(Basemap::topographicVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Layers/BrowseWfsLayers/BrowseWfsLayers.cpp:  m_map(new Map(Basemap::topographic(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/FeatureLayerShapefile/FeatureLayerShapefile.cpp:  m_map = new Map(Basemap::streetsVector(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/DisplayKml/DisplayKml.cpp:  m_scene = new Scene(Basemap::imageryWithLabels(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/CreateAndSaveKmlFile/CreateAndSaveKmlFile.cpp:  m_map(new Map(Basemap::darkGrayCanvasVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Layers/DisplaySubtypeFeatureLayer/DisplaySubtypeFeatureLayer.cpp:  m_map(new Map(Basemap::streetsNightVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Layers/FeatureCollectionLayerQuery/FeatureCollectionLayerQuery.cpp:  m_map = new Map(Basemap::oceans(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/RasterFunctionService/RasterFunctionService.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/ChangeSublayerVisibility/ChangeSublayerVisibility.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/FeatureCollectionLayerFromPortal/FeatureCollectionLayerFromPortal.cpp:  m_map(new Map(Basemap::oceans(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/DisplayKmlNetworkLinks/DisplayKmlNetworkLinks.cpp:  Scene* scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/RasterColormapRenderer/RasterColormapRenderer.cpp:  Map* map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/DisplayAnnotation/DisplayAnnotation.cpp:  m_map(new Map(Basemap::lightGrayCanvas(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/LoadWfsXmlQuery/LoadWfsXmlQuery.cpp:  m_map(new Map(Basemap::navigationVector(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Layers/ChangeSublayerRenderer/ChangeSublayerRenderer.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/PlayAKmlTour/PlayAKmlTour.cpp:  m_scene(new Scene(Basemap::imagery(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Layers/QueryMapImageSublayer/QueryMapImageSublayer.cpp:  m_map = new Map(Basemap::streetsVector(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/RasterFunctionFile/RasterFunctionFile.cpp:  m_map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/StyleWmsLayer/StyleWmsLayer.cpp:  m_map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/RasterLayerGeoPackage/RasterLayerGeoPackage.cpp:  m_map = new Map(Basemap::lightGrayCanvas(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Layers/GroupLayers/GroupLayers.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/EditData/DeleteFeaturesFeatureService/DeleteFeaturesFeatureService.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/EditData/AddFeaturesFeatureService/AddFeaturesFeatureService.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/EditData/UpdateAttributesFeatureService/UpdateAttributesFeatureService.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/EditData/UpdateGeometryFeatureService/UpdateGeometryFeatureService.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/EditData/EditKmlGroundOverlay/EditKmlGroundOverlay.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/EditData/EditWithBranchVersioning/EditWithBranchVersioning.cpp:  m_map(new Map(Basemap::streetsVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/EditData/EditFeatureAttachments/EditFeatureAttachments.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/FeatureLayerGeoPackage/FeatureLayer_GeoPackage.cpp:  m_map = new Map(Basemap::lightGrayCanvas(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/ServiceFeatureTableManualCache/ServiceFeatureTableManualCache.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/FeatureLayerQuery/FeatureLayerQuery.cpp:    m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/FeatureLayerChangeRenderer/FeatureLayerChangeRenderer.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/FeatureLayerDefinitionExpression/FeatureLayerDefinitionExpression.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/FeatureLayerSelection/FeatureLayerSelection.cpp:  m_map = new Map(Basemap::lightGrayCanvas(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/FeatureLayerDictionaryRenderer/FeatureLayerDictionaryRenderer.cpp:  Map* map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/TimeBasedQuery/TimeBasedQuery.cpp:  m_map = new Map(Basemap::oceans(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/FeatureLayerFeatureService/FeatureLayerFeatureService.cpp:  m_map = new Map(Basemap::terrainWithLabels(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/ServiceFeatureTableNoCache/ServiceFeatureTableNoCache.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Features/ServiceFeatureTableCache/ServiceFeatureTableCache.cpp:  m_map = new Map(Basemap::lightGrayCanvas(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/DisplayGrid/DisplayGrid.cpp:  m_map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/ShowLabelsOnLayers/ShowLabelsOnLayers.cpp:  m_map = new Map(Basemap::lightGrayCanvas(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/SymbolizeShapefile/SymbolizeShapefile.cpp:  m_map = new Map(Basemap::streetsVector(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/Simple_Marker_Symbol/Simple_Marker_Symbol.cpp:  m_map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/GODictionaryRenderer/GODictionaryRenderer.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/GODictionaryRenderer_3D/GODictionaryRenderer_3D.cpp:  Scene* scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/ReadSymbolsFromMobileStyle/ReadSymbolsFromMobileStyle.cpp:  m_map(new Map(Basemap::topographic(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/Unique_Value_Renderer/Unique_Value_Renderer.cpp:  Basemap* basemap = Basemap::topographic(this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/IdentifyGraphics/IdentifyGraphics.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/GORenderers/GORenderers.cpp:    m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/ShowCallout/ShowCallout.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/Simple_Renderer/Simple_Renderer.cpp:  m_map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/Picture_Marker_Symbol/Picture_Marker_Symbol.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/CustomDictionaryStyle/CustomDictionaryStyle.cpp:  m_map(new Map(Basemap::streetsVector(this), this))
+ArcGISRuntimeSDKQt_CppSamples/DisplayInformation/BuildLegend/BuildLegend.cpp:  Basemap* basemap = Basemap::topographic(this);
+ArcGISRuntimeSDKQt_CppSamples/UtilityNetwork/TraceUtilityNetwork/TraceUtilityNetwork.cpp:  m_map(new Map(Basemap::streetsNightVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/UtilityNetwork/PerformValveIsolationTrace/PerformValveIsolationTrace.cpp:  m_map(new Map(Basemap::streetsNightVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/UtilityNetwork/DisplayUtilityAssociations/DisplayUtilityAssociations.cpp:  m_map(new Map(Basemap::topographicVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Search/FindPlace/FindPlace.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Search/FindAddress/FindAddress.cpp:  Basemap* basemap = Basemap::imageryWithLabels(this);
+ArcGISRuntimeSDKQt_CppSamples/Search/ReverseGeocodeOnline/ReverseGeocodeOnline.cpp:  m_map(new Map(Basemap::imageryWithLabels(this), this))
+ArcGISRuntimeSDKQt_CppSamples/LocalServer/LocalServerGeoprocessing/LocalServerGeoprocessing.cpp:  m_map = new Map(Basemap::lightGrayCanvas(this), this);
+ArcGISRuntimeSDKQt_CppSamples/LocalServer/LocalServerFeatureLayer/LocalServerFeatureLayer.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/LocalServer/LocalServerMapImageLayer/LocalServerMapImageLayer.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/AR/ExploreScenesInFlyoverAR/ExploreScenesInFlyoverAR.cpp:  m_scene(new Scene(Basemap::imagery(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Geometry/ClipGeometry/ClipGeometry.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Geometry/SpatialOperations/SpatialOperations.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Geometry/ConvexHull/ConvexHull.cpp:  m_map(new Map(Basemap::topographic(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Geometry/ProjectGeometry/ProjectGeometry.cpp:  m_map = new Map(Basemap::nationalGeographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Geometry/SpatialRelationships/SpatialRelationships.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Geometry/CreateGeometries/CreateGeometries.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Geometry/FormatCoordinates/FormatCoordinates.cpp:  m_map(new Map(Basemap::imagery(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Geometry/DensifyAndGeneralize/DensifyAndGeneralize.cpp:  m_map = new Map(Basemap::streetsNightVector(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Geometry/GeodesicOperations/GeodesicOperations.cpp:  m_map = new Map(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Geometry/CutGeometry/CutGeometry.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Geometry/NearestVertex/NearestVertex.cpp:  m_map(new Map(Basemap::topographic(this), this))
+ArcGISRuntimeSDKQt_CppSamples/Geometry/Buffer/Buffer.cpp:  m_map = new Map(Basemap::topographic(this), this);  
+ArcGISRuntimeSDKQt_CppSamples/Geometry/ListTransformations/ListTransformations.cpp:  m_map = new Map(Basemap::lightGrayCanvas(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Routing/ServiceArea/ServiceArea.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Routing/FindClosestFacilityToMultipleIncidentsService/FindClosestFacilityToMultipleIncidentsService.cpp:  m_map(new Map(Basemap::streetsWithReliefVector(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Routing/RouteAroundBarriers/RouteAroundBarriers.cpp:  m_map(new Map(Basemap::streets(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Routing/FindRoute/FindRoute.cpp:  Basemap* basemap = Basemap::navigationVector(this);
+ArcGISRuntimeSDKQt_CppSamples/Routing/FindServiceAreasForMultipleFacilities/FindServiceAreasForMultipleFacilities.cpp:  m_map(new Map(Basemap::lightGrayCanvas(this), this)),
+ArcGISRuntimeSDKQt_CppSamples/Routing/ClosestFacility/ClosestFacility.cpp:  m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples/Routing/NavigateRoute/NavigateRoute.cpp:  m_map(new Map(Basemap::navigationVector(this), this))
+ArcGISRuntimeSDKQt_CppSamples/CloudAndPortal/TokenAuthentication/TokenAuthentication.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples/CloudAndPortal/IntegratedWindowsAuthentication/IntegratedWindowsAuthentication.cpp:  m_map(new Map(Basemap::topographic(this), this)),
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/SetInitialMapArea/SetInitialMapArea.cpp:    m_map = new Map(Basemap::imageryWithLabels(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ChangeBasemap/ChangeBasemap.cpp:ChangeBasemap::ChangeBasemap(QWidget* parent) :
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ChangeBasemap/ChangeBasemap.cpp:    m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ChangeBasemap/ChangeBasemap.cpp:            m_map->setBasemap(Basemap::topographic(this));
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ChangeBasemap/ChangeBasemap.cpp:            m_map->setBasemap(Basemap::streets(this));
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ChangeBasemap/ChangeBasemap.cpp:            m_map->setBasemap(Basemap::imagery(this));
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ChangeBasemap/ChangeBasemap.cpp:            m_map->setBasemap(Basemap::oceans(this));
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ChangeBasemap/ChangeBasemap.cpp:ChangeBasemap::~ChangeBasemap() = default;
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ManageBookmarks/ManageBookmarks.cpp:    m_map = new Map(Basemap::imageryWithLabels(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/MapLoaded/MapLoaded.cpp:    m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/DisplayMap/DisplayMap.cpp:    m_map = new Map(Basemap::imageryWithLabels(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/MapRotation/MapRotation.cpp:    m_map = new Map(Basemap::streets(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Maps/ChangeViewpoint/ChangeViewpoint.cpp:    m_map = new Map(Basemap::imageryWithLabels(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/Scenes/BasicSceneView/BasicSceneView.cpp:    m_scene = new Scene(Basemap::imagery(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/DisplayInformation/GORenderers/GORenderers.cpp:  m_map = new Map(Basemap::topographic(this), this);
+ArcGISRuntimeSDKQt_CppSamples_Widgets/DisplayInformation/BuildLegend/BuildLegend.cpp:  m_map = new Map(Basemap::topographic(this), this);
