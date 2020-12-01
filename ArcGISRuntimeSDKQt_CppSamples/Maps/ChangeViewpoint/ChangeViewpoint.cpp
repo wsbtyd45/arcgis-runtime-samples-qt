@@ -19,6 +19,7 @@
 #endif // PCH_BUILD
 
 #include "ChangeViewpoint.h"
+#include "ArcGISRuntimeEnvironment.h"
 
 #include "Map.h"
 #include "MapQuickView.h"
@@ -48,7 +49,7 @@ void ChangeViewpoint::componentComplete()
   QQuickItem::componentComplete();
 
   // create a new basemap instance
-  Basemap* basemap = Basemap::imageryWithLabels(this);
+  Basemap* basemap = new Basemap(BasemapStyle::ArcGISImageryLabels, this);
   // create a new map instance
   m_map = new Map(basemap, this);
   // set map on the map view
